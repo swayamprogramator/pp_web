@@ -1,0 +1,936 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Logos/background6.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    
+    width: 250px;
+    height: 80px;
+    margin-right: 10px;
+}
+/*POPUP*/
+/* Basic styles for the popup container and content */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    animation: fadeIn 0.5s; /* Add fade-in animation */
+}
+
+.popup-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    padding: 30px;
+    max-width: 600px;
+    margin: 10% auto;
+}
+
+/* Style the close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for the list items */
+.popup-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-content ul li {
+    margin-bottom: 10px;
+}
+
+.popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.popup-content h3 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.popup-content p {
+    margin-bottom: 15px;
+}
+
+/* Define the keyframes for the animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add fade-out animation when hiding the popup */
+.popup.fadeOut {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+
+/* Burger */
+.burger {
+    display: none; /* Hide the checkbox */
+  }
+  
+  .burger + label {
+    display: none;
+    
+  }
+  
+  .burger + label span {
+    display: block;
+    position: absolute;
+    height: 3px; /* Adjust height of individual spans */
+    width: 100%;
+    background: rgb(248, 247, 247); /* Adjust color as needed */
+    border-radius: 9px;
+    transition: .25s ease-in-out;
+  }
+  
+  .burger + label span:nth-of-type(1) {
+    top: 0px;
+  }
+  
+  .burger + label span:nth-of-type(2) {
+        top: 10px;
+
+  }
+  
+  .burger + label span:nth-of-type(3) {
+        top: 20px;
+
+  }
+  
+  .burger:checked + label span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  
+  .burger:checked + label span:nth-of-type(2) {
+    opacity: 0;
+  }
+  
+  .burger:checked + label span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+  
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute; /* Change from fixed to absolute */
+    top: 100%; /* Position it below the header */
+    right: 0; /* Align it to the right */
+    width: 35%;
+    background-color: #020202;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+   /*padding: 10px 20px;*/
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #333;
+    /*margin: 0 10px;*/
+    margin: 0 5px; 
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #6b1aff;
+}
+
+/* Introduction Section Styles */
+#intro {
+    padding: 30px 0; /* Adjust padding as needed */
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    padding: 50px;
+    
+    text-align: center;
+    color: #fff; /* Set text color to white */
+    border-radius: 10px; /* Add border radius */
+    transition: background 0.5s, transform 0.5s; /* Add transition */
+}
+
+.intro-container:hover {
+    background-color: #212021; /* Change background color on hover */
+    transform: translateY(-10px); /* Move up slightly on hover */
+}
+
+.intro-container .college-logo {
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+}
+
+.intro-content h2 {
+    font-size: 28px; /* Adjust font size as needed */
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease; /* Fade-in animation */
+}
+
+.intro-content p {
+    font-size: 18px; /* Adjust font size as needed */
+    line-height: 1.6;
+}
+
+/* About Us Section Styles */
+#about {
+    padding: 30px 0;
+}
+
+.about-box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    text-align: center; /* Align text to center */
+}
+
+.about-box i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.about-box h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #fff; /* Set text color to white */
+}
+
+.about-box p {
+    color: #fff; /* Set text color to white */
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-box a {
+    text-decoration: none;
+    color: #fff;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.about-box:hover {
+    background: #212021;
+    transform: translateY(-10px);
+}
+/*event section*/
+
+.events-section {
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* background-image: url('Logos/background11.jpeg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.events-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.event-card {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent gray background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    flex: 1;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    background-color: #4f00b8; /* Dark purple background on hover */
+}
+
+.event-card h3, .event-card p {
+    color: white; /* Text color white */
+}
+
+.event-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #6b1aff; /* Purple button color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.event-link:hover {
+    background-color: #4f00b8; /* Darker purple background on hover */
+}
+.event-section:hover {
+    background: #212021;
+    transform: translateY(-10px);
+}
+
+
+/*gallery section*/
+
+#gallery {
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.event-section {
+    margin-bottom: 50px;
+}
+
+.event-section h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.event-description p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc; /* Light gray text color */
+}
+
+.event-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    margin-bottom: 20px;
+}
+
+.event-images img {
+    width: 300px; /* Adjust image width */
+    height: auto;
+    border-radius: 10px; /* Add border radius */
+    border: 2px solid #fff; /* Add white border */
+    transition: transform 0.3s ease;
+}
+
+.event-images img:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+    border-color: #6b1aff; /* Change border color on hover */
+}
+.about-box:hover {
+    background: #212021;
+    transform: translateY(-10px);
+}
+
+.see-more,
+.see-all {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6b1aff; /* Dark purple button color */
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.see-more:hover,
+.see-all:hover {
+    background-color: #4f00b8; /* Darker purple color on hover */
+}
+
+
+/* project section */
+#projects {
+    padding: 80px 0;
+    background-image: url('Logos/background12.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+#projects .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    width: 300px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-details {
+    padding: 20px;
+}
+
+.project-details h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.project-details p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.project-details a {
+    color: #6b1aff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-details a:hover {
+    text-decoration: underline;
+}
+#projects:hover {
+     transform: translateY(-10px);
+}
+
+#see-more {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6b1aff;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
+}
+
+#see-more:hover {
+    background-color: #4f00b8;
+}
+
+/* Club Mentors Section Styles */
+#mentors {
+    padding: 50px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+}
+
+#mentors .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#mentors .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Adjust the gap between mentor boxes */
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Limit the maximum width of the container */
+}
+
+.mentor-box {
+    width: 250px; /* Adjust the width of the mentor boxes */
+    height: 300px; /* Adjust the height of the mentor boxes */
+    background-color: #333; /* Dark gray background color for mentor boxes */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Glow effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
+    text-align: center; /* Center-align the mentor box content */
+}
+
+.mentor-box:hover {
+    box-shadow: 0 0 40px #6b1aff; /* Dark purple glow effect on hover */
+}
+
+.mentor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the image round */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    margin: 0 auto 20px; /* Center the image vertically and add bottom margin */
+}
+
+.mentor-image img {
+    width: 100%;
+    height: auto;
+}
+
+.mentor-details {
+    margin-top: auto; /* Push mentor details to the bottom */
+}
+
+.mentor-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mentor-position {
+    font-size: 16px;
+}
+
+/* Core Members Section Styles */
+#core-members {
+    padding: 50px 0;
+    text-align: center;
+    background-image: url('Logos/background8.jpeg'); /* Replace 'background_image.jpg' with the URL of your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    color: #fff;
+}
+
+#core-members .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 auto 30px; /* Center the headline horizontally and add bottom margin */
+}
+
+.core-members-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between member boxes */
+}
+
+.core-member {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Adjust the width of the member box */
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.core-member:hover {
+    background-color: #b800a3; /* Dark purple color on hover */
+}
+
+
+.core-member img {
+    width: 150px; /* Increase the size of the member image */
+    height: 150px;
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 20px;
+}
+
+.member-info {
+    margin-bottom: 20px;
+}
+
+.member-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.member-position {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.member-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.member-links a {
+    margin: 0 5px; /* Adjust spacing between icons */
+}
+
+.member-links img {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+
+.all-members-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6b1aff; /* Dark purple button color */
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.all-members-button:hover {
+    background-color: #4f00b8; /* Darker purple color on hover */
+}
+
+/* Blog Section Styles */
+#blog {
+    padding: 50px 0;
+    background-image: url('Logos/background10.jpeg'); /* Replace 'background_image.jpg' with the URL of your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center;
+}
+
+#blog .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Adjust the gap between blog posts */
+}
+
+.blog-post {
+    background-color: #fff; /* White background for each blog post */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflow content */
+    max-width: 180px; /* Set maximum width for blog post */
+  
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.blog-post:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+}
+
+.blog-post img {
+    width: 100%; /* Make the image fill the container */
+    height: auto;
+    border-radius: 10px 10px 0 0; /* Rounded corners for top */
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6b1aff; /* Dark purple button color */
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #4f00b8; /* Darker purple color on hover */
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #060606; /* Light gray background color */
+}
+
+#contact .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adjust the gap between icons */
+}
+
+.contact-icons a {
+    display: inline-block;
+}
+
+.contact-icons img {
+    width: 50px; /* Adjust the size of icons */
+    height: 50px;
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+/*copyright*/
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background-image: url('Logos/bottom_back1.jpg');
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.copyright i {
+    color: #f9f8f8;
+}
+  
+
+
+/* Media query for screens smaller than 768px (typical mobile devices) */
+@media screen and (max-width: 836px) {
+   
+    
+
+    .logo img {
+        width: 110px; /* Reduce logo size */
+        padding: 15px;
+        height: auto;
+    }
+   
+    .nav-link{
+        display: none;
+        
+    }
+    .popup-content {
+        max-width: 80%; /* Adjusted max-width for smaller screens */
+        margin: 20% auto; /* Increased margin for better centering */
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+   .burger{
+        display: none;
+    }
+    .burger + label {
+        position: relative;
+        display: block;
+        width: 30px; /* Adjust width as needed */
+        height: 24px; /* Adjust height as needed */
+        cursor: pointer;
+      }
+      .dropdown {
+        display: absolute;
+        position:absolute;
+        top: 80px; /* Adjust the top position as needed */
+        right: 0; 
+        width: 35%; 
+        background-color: #020202; 
+        z-index: 1000; 
+        padding: 10px 0; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+    #burger:checked ~ .dropdown {
+        display: block;
+    }
+    
+    .dropdown ul {
+        
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column
+    }
+    
+    .dropdown ul li {
+        margin-bottom: 10px; /* Add bottom margin between each list item */
+    }
+    
+    
+    .dropdown ul li a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+    }
+    
+
+
+    .events-container {
+        flex-direction: column; /* Stack event cards vertically on small screens */
+    }
+
+    .intro-container {
+        padding: 20px;
+    }
+
+    .events-container {
+        flex-direction: column; /* Arrange event cards in a column */
+        align-items: center; /* Center-align event cards */
+    }
+
+    .event-card {
+        width: 80%; /* Adjust width to occupy most of the screen width */
+        margin-bottom: 20px; /* Add bottom margin for separation */
+    }
+
+    .event-images img {
+        width: 200px;
+    }
+
+    .project-card {
+        width: 200px;
+    }
+
+    .core-member img {
+        width: 100px;
+        height: 100px;
+        padding-bottom: 0%;
+        margin-bottom: 0px;
+        
+    }
+
+    #photo{
+        width:30px;
+        height: 30px;
+        
+    }
+
+    .core-member{
+        width: 200px;
+    
+    }
+    .member-name{
+        font-size: 15px;
+    }
+    .member-position{
+        font-size: 13px;
+    }
+   
+    #mentors .container {
+        flex-wrap: wrap; /* Allow mentor boxes to wrap to the next line */
+        justify-content: center; /* Center-align mentor boxes */
+        gap: 20px; /* Adjust the gap between mentor boxes */
+    }
+
+    .mentor-box {
+        width: calc(50% - 20px); /* Make mentor boxes occupy half the width of the screen with some gap */
+        margin-bottom: 20px; /* Add bottom margin to separate mentor boxes */
+    }
+
+    .read-more{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
