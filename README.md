@@ -2,10 +2,10 @@
 
 Welcome to the official website of **Programmers Paradise**, crafted with passion by our web team. This project showcases our commitment to creativity, collaboration, and cutting-edge web technologies.
 
-![Website Preview](https://your-image-link.com) <!-- Add a link to an image or GIF showcasing the website -->
+![Website Preview](https://your-image-link.com)
 
 ## 🚀 Live Demo
-Explore the live version of our website [here](https://your-live-demo-link.com).
+Explore the live version of our website [here](https://programmers-paradise.tech).
 
 ## 📚 Project Overview
 
