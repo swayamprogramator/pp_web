@@ -1,6 +1,6 @@
 # 🌐 Programmers Paradise Website
 
-Welcome to the official website of **Programmers Paradise**, crafted with passion by our web team. This project showcases our commitment to creativity, collaboration, and cutting-edge web technologies.
+Welcome to the website of **Programmers Paradise**, crafted with passion by our web team. This project showcases our commitment to creativity, collaboration, and cutting-edge web technologies.
 
 ![Website Preview](https://your-image-link.com)
 
